@@ -44,9 +44,9 @@ console.log(b - a);
 
 console.log("Question 1 (c):");
 
-const startingValue = 0;
+const startingAgeValue = 0;
 
-const ageSum = ages.reduce ((accumulator, currentValue) => accumulator + currentValue, startingValue);
+const ageSum = ages.reduce ((accumulator, currentValue) => accumulator + currentValue, startingAgeValue);
 const averageAge = (ageSum / ages.length);
 console.log(averageAge);
 
@@ -128,3 +128,140 @@ for (let i = 0; i < names.length; i++){
  //--------------------------------------------------
 
  console.log("Question 6:");
+
+function nameReducer (accumulator, currentValue, index){
+    for (let i = 0; i < nameLengths.length; i++){
+        let namesSum = accumulator + currentValue;
+    }
+    console.log(namesSum);
+}
+
+//not sure how to get this to work properly - moving on with the intention of coming back
+
+//-------------------------------------------------------------
+
+console.log("Quesion 7:");
+
+const concatWord = (word, n) => word.repeat(n);
+
+console.log(concatWord("Hello", 3));
+
+//Using the repeat method returns a new string with a specified number of copies
+
+//--------------------------------------------------------------
+
+console.log("Question 8:");
+
+const fullName = (firstName, lastName) => firstName + " " + lastName;
+
+console.log(fullName("Logan", "Robertson"));
+
+
+//------------------------------------------------------------------
+
+console.log("Question 9:");
+
+numArray = [6,8,12,31,54];
+console.log(numArray);
+
+function greaterThan100 (array){
+    for (i = 0; i < numArray.length; i++){
+        let sumCounter = 0
+        sumCounter += numArray[i];
+    }
+    if (sumCounter > 100){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(greaterThan100(numArray));
+
+numArray.push(100);
+
+console.log(greaterThan100(numArray));
+
+// This also isn't working and I am not really sure why
+
+//-------------------------------------------------------------
+
+console.log("Question 10:");
+
+array1 = [1,12,34,5];
+const initalValue = 0
+
+const arrAverage = array1.reduce((accum, currentVal) => accum + currentVal, initalValue);
+
+console.log(arrAverage);
+
+//------------------------------------------------------------
+
+console.log("Question 11:");
+
+arrayA = [9,6,3,7];
+arrayB = [3,9,7,6];
+
+function compareAverage (arr1, arr2){
+    let firstAverage = arr1.reduce((accum, currentVal) => accum + currentVal, initalValue);
+    let secondAverage = arr2.reduce((accum, currentVal) => accum + currentVal, initalValue);
+
+    if (firstAverage > secondAverage){
+        return true;
+    } else return false;
+}
+
+console.log(compareAverage(arrayA, arrayB));
+
+arrayA.push(90);
+
+console.log(compareAverage(arrayA, arrayB));
+
+//-----------------------------------------------------------
+
+console.log("Question 12:");
+
+function willBuyDrink (isHotOutside, moneyInPocket){
+    if (isHotOutside === true && moneyInPocket >= 10.50){
+        return true;
+    } else return false;
+}
+
+console.log(willBuyDrink(true,12));
+
+console.log(willBuyDrink(false,12));
+
+console.log(willBuyDrink(false,10));
+
+console.log(willBuyDrink(true,10));
+
+//--------------------------------------------------------
+
+console.log("Question 13:");
+
+//Problem: Create an array called booksRead & fill with names of books recently read.
+// then create a fuction that iterates throught the array to find the sum of books read.
+// if the sum is 5 or greater console.log "Your'e a Nerd!" and if the sum is less,
+//console.log "Read more!".
+
+booksRead = ["Assasins Blade", "Dune", "The Hunger Games", "Throne of Glass", "Legend"];
+
+function booksSum (arr){
+    let bookCounter = 0;
+    for (i = 0; i < arr.length; i++){
+        arr[i] += bookCounter;
+    }
+    if (bookCounter >= 5){
+        return "Your'e a nerd!";
+        } else return "Read more!";
+}
+
+console.log(booksSum(booksRead));
+
+booksRead.push("Catching Fire");
+
+console.log(booksSum(booksRead));
+
+//Looks like it is skipping over the first "if" line ang going straigh to the else...?
+//function should count the number of elements in the array & compare it against the 
+//expression - the returning either string depending on the sum.
